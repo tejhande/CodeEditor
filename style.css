@@ -27,26 +27,68 @@ body {
     min-height: 100vh;
 }
 
+/* Define color and spacing variables for consistency */
+:root {
+    --header-bg: #333; /* Dark background for the header */
+    --link-color: #4e8ef7; /* Blue color for the link */
+    --text-color: #fff; /* White text color for better contrast */
+    --spacing: 20px; /* General spacing for padding */
+}
+
 /* Header Styles */
 header {
     background-color: var(--header-bg);
     padding: var(--spacing);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow effect */
     position: sticky;
     top: 0;
     z-index: 100;
+    display: flex;
+    justify-content: space-between; /* Spaces elements on the left and right */
+    align-items: center;
+    flex-wrap: wrap; /* Ensures elements wrap on smaller screens */
 }
 
 h1 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    text-align: center;
+    font-size: 2rem; /* Slightly larger font size for the header */
+    font-weight: 700; /* Bolder font weight */
+    color: var(--text-color); /* Ensure text color is white */
+    text-align: left; /* Align text to the left */
+    margin: 0;
+    text-transform: uppercase; /* Adds a modern touch */
+    letter-spacing: 1px; /* Spacing between letters */
+    flex-grow: 1; /* Allows the title to grow and take available space */
 }
 
-h2 {
-    font-size: 1.2rem;
-    font-weight: 500;
+a {
+    font-size: 1rem; /* Set font size for the link */
+    color: var(--link-color); /* Set link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: 400;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
+
+a:hover {
+    color: #ff7f50; /* Hover color to indicate interactivity */
+}
+
+/* Media query for responsiveness on smaller screens */
+@media (max-width: 768px) {
+    header {
+        justify-content: center; /* Center content when on small screens */
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+
+    a {
+        font-size: 0.9rem; /* Adjust link font size */
+        margin-top: 10px; /* Add margin for spacing */
+    }
+}
+
 
 /* Container Layout */
 .container {
